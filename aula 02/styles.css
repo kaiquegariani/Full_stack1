@@ -1,4 +1,4 @@
-
+/* MENU */
 #menu {
     background-color: #333;
     padding: 10px 0;
@@ -24,13 +24,12 @@
     display: inline-block;
 }
 
-
 .menu-link:hover {
     background-color: #555;
     border-radius: 4px;
 }
 
-
+/* TÍTULO */
 .titulo {
     color: #222;
     font-size: 28px;
@@ -38,14 +37,7 @@
     text-align: center;
 }
 
-
-.descricao {
-    text-align: center;
-    font-size: 18px;
-    color: #555;
-}
-
-
+/* TABELA DE PROJETOS */
 .projetos-tabela {
     width: 80%;
     margin: 20px auto;
@@ -64,7 +56,6 @@
     color: #333;
 }
 
-
 .link-projeto {
     color: #007BFF;
     text-decoration: none;
@@ -72,4 +63,217 @@
 
 .link-projeto:hover {
     text-decoration: underline;
+    color: #0056b3;
+}
+
+/* BODY */
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+/* TOPO PADRÃO */
+.topo {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.topo .titulo {
+    color: #fff;
+    font-size: 24px;
+}
+
+/* CONTEÚDO PADRÃO */
+.conteudo {
+    text-align: center;
+    padding: 40px;
+}
+
+.descricao {
+    color: #555;
+    font-size: 18px;
+}
+
+/* COPIA DO MODELO REFERÊNCIA */
+.topo-referencia {
+    background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 10px 0;
+}
+
+.logo-esquerda, .logo-direita {
+    position: absolute;
+    top: 10px;
+    width: 60px;
+}
+
+.logo-esquerda {
+    left: 20px;
+}
+
+.logo-direita {
+    right: 20px;
+}
+
+.titulo-referencia {
+    font-size: 32px;
+    color: darkgreen;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.menu-referencia {
+    background-color: lightskyblue;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.menu-referencia ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-referencia ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.menu-referencia ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    color: darkblue;
+}
+
+.introducao {
+    padding: 20px;
+    background-color: lightgray;
+    font-family: sans-serif;
+    font-size: 20pt;
+    color: black;
+    text-align: justify;
+}
+
+.introducao h2 {
+    text-align: center;
+    color: darkred;
+}
+
+.livros {
+    text-align: center;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.livros h2 {
+    font-size: 24px;
+    color: darkgreen;
+}
+
+.livros-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.livros-container img {
+    width: 150px;
+    height: auto;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.fei {
+    text-align: center;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+.fei-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contatos {
+    padding: 20px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.contatos h2 {
+    margin-bottom: 10px;
+}
+
+.contatos table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border: 2px dashed red;
+    width: 80%;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.contatos th, .contatos td {
+    border: 1px solid #999;
+    padding: 10px;
+}
+
+.links-uteis {
+    background-color: yellow;
+    padding: 10px 30px;
+    margin: 0 auto;
+    width: 80%;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.links-uteis a {
+    color: blue;
+    text-decoration: none;
+}
+
+.rodape-referencia {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 15pt;
+}
+
+.rodape-referencia .rodape-img {
+    width: 50px;
+    height: auto;
+}
+
+.rodape-referencia p {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0 20px;
+    color: #333;
+}
+
+/* RODAPÉ PADRÃO */
+.rodape {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.link-projeto:hover {
+    color: #0056b3;
 }
