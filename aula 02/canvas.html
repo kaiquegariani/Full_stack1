@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        body {
+            background-color: #e6f0f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        canvas {
+            border: 2px solid black;
+            margin: 20px 0;
+            background-color: white;
+        }
+
+        h1 {
+            margin-top: 30px;
+            font-size: 24px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Canvas - Modelo Geométrico</h1>
+    <canvas id="canvas1" width="300" height="300"></canvas>
+
+    <h1>Canvas - Casinha </h1>
+    <canvas id="canvas2" width="300" height="300"></canvas>
+
+    <script>
+        // Primeiro canvas - geométrico
+        const ctx1 = document.getElementById("canvas1").getContext("2d");
+
+        ctx1.fillStyle = "blue";
+        ctx1.fillRect(0, 0, 40, 40);
+
+        ctx1.fillStyle = "red";
+        ctx1.fillRect(260, 0, 40, 40);
+
+        ctx1.fillStyle = "cyan";
+        ctx1.fillRect(0, 110, 30, 30);
+        ctx1.fillRect(270, 110, 30, 30);
+
+        ctx1.fillStyle = "yellow";
+        ctx1.fillRect(0, 240, 40, 40);
+
+        ctx1.fillStyle = "black";
+        ctx1.fillRect(260, 240, 40, 40);
+
+        ctx1.strokeStyle = "blue";
+        ctx1.beginPath();
+        ctx1.moveTo(0, 0);
+        ctx1.lineTo(150, 150);
+        ctx1.stroke();
+
+        ctx1.strokeStyle = "red";
+        ctx1.beginPath();
+        ctx1.moveTo(300, 0);
+        ctx1.lineTo(150, 150);
+        ctx1.stroke();
+
+        ctx1.strokeStyle = "black";
+        ctx1.lineWidth = 1;
+        ctx1.beginPath();
+        ctx1.moveTo(150, 0);
+        ctx1.lineTo(150, 300);
+        ctx1.stroke();
+
+        ctx1.beginPath();
+        ctx1.moveTo(0, 150);
+        ctx1.lineTo(300, 150);
+        ctx1.stroke();
+
+        ctx1.beginPath();
+        ctx1.arc(150, 120, 15, 0, Math.PI * 2);
+        ctx1.fillStyle = "deepskyblue";
+        ctx1.fill();
+
+        ctx1.strokeStyle = "green";
+        ctx1.beginPath();
+        ctx1.arc(150, 240, 60, Math.PI, 2 * Math.PI);
+        ctx1.stroke();
+
+        ctx1.beginPath();
+        ctx1.arc(90, 240, 10, 0, Math.PI * 2);
+        ctx1.fillStyle = "yellow";
+        ctx1.fill();
+
+        ctx1.beginPath();
+        ctx1.arc(210, 240, 10, 0, Math.PI * 2);
+        ctx1.fill();
+
+        ctx1.beginPath();
+        ctx1.arc(150, 270, 30, Math.PI, 2 * Math.PI);
+        ctx1.fillStyle = "cyan";
+        ctx1.fill();
+
+        ctx1.fillStyle = "red";
+        ctx1.fillRect(135, 145, 30, 30);
+
+        // Segundo canvas - casinha
+        const ctx2 = document.getElementById("canvas2").getContext("2d");
+
+        // Céu
+        ctx2.fillStyle = "#90e0ef";
+        ctx2.fillRect(0, 0, 300, 300);
+
+        // Sol
+        ctx2.beginPath();
+        ctx2.arc(250, 50, 30, 0, 2 * Math.PI);
+        ctx2.fillStyle = "yellow";
+        ctx2.fill();
+
+        // Rua
+        ctx2.fillStyle = "#555";
+        ctx2.fillRect(0, 200, 300, 100);
+
+        // Lago (canto inferior esquerdo)
+        ctx2.fillStyle = "#0077b6";
+        ctx2.beginPath();
+        ctx2.moveTo(0, 300);
+        ctx2.lineTo(0, 240);
+        ctx2.lineTo(60, 240);
+        ctx2.quadraticCurveTo(0, 240, 0, 300);
+        ctx2.fill();
+
+        // Casa - base
+        ctx2.fillStyle = "#8B0000";
+        ctx2.fillRect(120, 150, 60, 50);
+
+        // Telhado
+        ctx2.fillStyle = "#C0392B";
+        ctx2.beginPath();
+        ctx2.moveTo(150, 120);
+        ctx2.lineTo(180, 150);
+        ctx2.lineTo(120, 150);
+        ctx2.closePath();
+        ctx2.fill();
+
+        // Janela esquerda
+        ctx2.fillStyle = "#00BFFF";
+        ctx2.fillRect(125, 160, 15, 15);
+
+        // Janela direita
+        ctx2.fillRect(160, 160, 15, 15);
+
+        // Porta
+        ctx2.fillStyle = "#5C1E0B";
+        ctx2.fillRect(140, 180, 20, 20);
+
+        // Árvores
+        function arvore(x, y) {
+            ctx2.fillStyle = "#8B0000";
+            ctx2.fillRect(x + 12, y + 40, 6, 30);
+            ctx2.beginPath();
+            ctx2.arc(x + 15, y + 40, 15, 0, Math.PI * 2);
+            ctx2.fillStyle = "green";
+            ctx2.fill();
+        }
+
+        arvore(30, 170);
+        arvore(240, 170);
+    </script>
+
+</body>
+</html>
