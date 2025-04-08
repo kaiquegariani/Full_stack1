@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container-guess {
+            text-align: center;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-guess" id="painel">
+        <h1>Jogo de Adivinhação</h1>
+        <p>Digite um número entre 1 e 100:</p>
+        <input type="number" id="inputNumero" min="1" max="100" placeholder="Ex: 42">
+        <br>
+        <button onclick="verificar()">Tentar</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+    
+        function verificar() {
+            const numeroDigitado = parseInt(document.getElementById("inputNumero").value);
+            const painel = document.getElementById("painel");
+            const resultado = document.getElementById("resultado");
+    
+            if (isNaN(numeroDigitado) || numeroDigitado < 1 || numeroDigitado > 100) {
+                resultado.textContent = "Digite um número válido entre 1 e 100.";
+                resultado.style.color = "orange";
+                return;
+            }
+    
+            if (numeroDigitado === numeroAleatorio) {
+                resultado.textContent = "Parabéns! Você acertou!";
+                resultado.style.color = "green";
+                painel.style.setProperty("background-color", "#d4edda"); // verde claro
+            } else {
+                const diferenca = Math.abs(numeroDigitado - numeroAleatorio);
+                let dica = "";
+    
+                if (numeroDigitado < numeroAleatorio) {
+                    dica = diferenca > 20 ? "Muito menor!" : "Tente um número maior!";
+                } else {
+                    dica = diferenca > 20 ? "Muito maior!" : "Tente um número menor!";
+                }
+    
+                resultado.textContent = dica;
+                resultado.style.color = "red";
+                painel.style.setProperty("background-color", "#f8d7da"); // vermelho claro
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,17 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-        <meta charset="UTF-8">
-        <title> Lab 1</title>
+    <meta charset="UTF-8">
+    <title>Contatos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <h1> Meus Contatos</h1>
-    <p>
-    <li>Telefone:(11)992374232</li>
-    <li>Email:kaiquegariani@gmail.com</li>
-    <li>intagram:kaique_gariani</li>
-    </p>
-    <td><a href="index.html" class="link-principal">Menu</a></td>
-    
+
+    <!-- Menu de navegação -->
+    <nav id="menu">
+        <ul>
+            <li><a href="index.html" class="menu-link">Início</a></li>
+            <li><a href="projects.html" class="menu-link">Projetos</a></li>
+            <li><a href="contatos.html" class="menu-link">Contatos</a></li>
+        </ul>
+    </nav>
+
+    <section class="contatos">
+        <h2>Meus Contatos</h2>
+        <table>
+            <tr>
+                <th>Tipo</th>
+                <th>Informação</th>
+            </tr>
+            <tr>
+                <td>Telefone</td>
+                <td>(11) 99237-4232</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>kaiquegariani@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Instagram</td>
+                <td>@kaique_gariani</td>
+            </tr>
+        </table>
+    </section>
+
+    <a href="#menu" class="voltar">Voltar ao topo</a>
+
 </body>
+</html>
